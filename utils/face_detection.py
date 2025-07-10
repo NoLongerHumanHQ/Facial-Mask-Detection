@@ -70,7 +70,7 @@ class FaceDetector:
         Returns:
             List of dictionaries with face information
         """
-        # Convert to grayscale for Haar cascade
+        # Convert to Grayscale for Haar cascade
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         
         # Detect faces
@@ -117,7 +117,7 @@ class FaceDetector:
                 if detection.score[0] < self.min_confidence:
                     continue
                     
-                # Get bounding box
+                # Get Bounding Box
                 bbox = detection.location_data.relative_bounding_box
                 x = int(bbox.xmin * image_width)
                 y = int(bbox.ymin * image_height)
@@ -160,7 +160,7 @@ def draw_face_box(image: np.ndarray,
     # Make a copy of the image to avoid modifying the original
     output = image.copy()
     
-    # Get bounding box coordinates
+    # Get Bounding Box Coordinates
     (x, y, w, h) = face["bbox"]
     
     # Draw bounding box
